@@ -1,0 +1,16 @@
+
+import time
+
+
+def count_down(time_of_second):
+    while time_of_second:
+        mins, second = divmod(time_of_second, 60)
+        timeing = '{:02d}:{:02d}'.format(mins, second)
+        print(timeing, end="\r")
+        time.sleep(1)
+        time_of_second -= 1
+    print("Time Up!")
+
+
+time_of_second = int(input("Enter the number of second: "))
+count_down(time_of_second)

@@ -1,0 +1,37 @@
+
+def merge_sorting(array_1):
+    if len(array_1) > 1:
+        mid = len(array_1) // 2
+
+        lift = array_1[:mid]
+        right = array_1[mid:]
+
+        merge_sorting(lift)
+        merge_sorting(right)
+
+        i = j = k = 0
+
+        while i < len(lift) and j < len(right):
+            if lift[i] < right[i]:
+                array_1[k] = lift[i]
+                i += 1
+            else:
+                array_1[k] = right[j]
+                j += 1
+            k += 1
+
+        while i < len(lift):
+            array_1[k] = lift[i]
+            i += 1
+            k += 1
+
+        while j < len(right):
+            array_1[k] = right[j]
+            j += 1
+            k += 1
+
+
+array_1 = [5, 3, 7, -8, 4, 9, 2, -2, 0, 78]
+print(array_1)
+merge_sorting(array_1)
+print(array_1)

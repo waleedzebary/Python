@@ -1,0 +1,42 @@
+def addition(number_1, number_2):
+    result = number_1 + number_2
+    print('The addition is = ', result)
+
+
+def subtraction(number_1, number_2):
+    result = number_1 - number_2
+    print('The subtraction is = ', result)
+
+
+def multiplication(number_1, number_2):
+    result = number_1 * number_2
+    print('The multiplication is = ', result)
+
+
+def division(number_1, number_2):
+    result = number_1 / number_2
+    print('The division is = ', result)
+
+
+def main():
+    while True:
+        number_1 = int(input('Enter the first number : '))
+        number_2 = int(input('Enter the second number : '))
+        numbers = input('enter addition "+" or enter subtraction "-" or enter multiplication "*" or enter division "/" :')
+        if numbers == "+":
+            addition(number_1, number_2)
+        elif numbers == "-":
+            subtraction(number_1, number_2)
+        elif numbers == "*":
+            multiplication(number_1, number_2)
+        elif numbers == "/":
+            division(number_1, number_2)
+        counter = input('if you want to continue enter "1" or exit enter "-1" : ')
+        if counter == "1":
+            print('continue')
+        if counter == "-1":
+            print('exit !!!!!!!!!!!!!')
+            exit()
+
+
+main()

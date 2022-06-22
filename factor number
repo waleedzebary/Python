@@ -1,0 +1,10 @@
+def factor():
+    numbers = int(input('enter a number : '))
+    fact = 1
+    for n in range(numbers):
+        fact = fact * numbers
+        numbers -= 1
+    print(f'the factor is : {fact}')
+
+
+factor()

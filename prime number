@@ -1,0 +1,9 @@
+def prime(numbers):
+    for n in range(2, int(numbers**1/2)+1):
+        if numbers % n == 0:
+            return print("is not prime")
+    return print("is prime")
+
+
+number = int(input("enter the number : "))
+print(prime(number))

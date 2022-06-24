@@ -1,0 +1,35 @@
+import cgi
+2 from base64 import b64decode
+3 import face_recognition
+4 formData = cgi.FieldStorage()
+5 face match=0
+6 image=formData.getvalue("current_image")
+7 email=formData.getvalue("email")
+8 data uri = image
+9 header, encoded = data_uri.split(",", 1)
+10 data = b64decode (encoded)
+11 with open( "image.png",
+"wb") as f:
+12
+f.write(data)
+13 got_image = face_recognition. load_image_file("image.png")
+14 existing_image = face_recognition. load_image_file("students/"email+". jpg" )
+15 got_image_facialfeatures = face recognition.face encodings (got image) [0]
+existing_image_facialfeatures = face _recognition.face encodings(existing_ image) [0]
+results=
+face_recognition. compare_faces(lexisting_image_facialfeatures],got_image_facialfeat
+ures)
+if(results[0]):
+face match=1
+else:
+face _match=0
+print( "Content-Type: text/html")
+pint()
+if(face _match==1):
+print( "‹script›alert( 'welcome ", email,"
+")</script>")
+else:
+print("«script>alert( "face not recognized" )
+
+# copyassignment.com
+# @python.hub

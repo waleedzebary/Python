@@ -1,0 +1,13 @@
+def counter(number):
+    counter_is = 0
+    if number < 0:
+        number *= -1
+    for var in range(number):
+        while number > 0:
+            number = number // 10
+            counter_is += 1
+    print("The digits of the number has be = ", counter_is)
+
+
+variable = int(input('Enter an integer number: '))
+counter(variable)

@@ -1,0 +1,15 @@
+def min_and_max():
+    list_1 = [39, 20, 15, 6, 9, 11, 24, 56]
+    min = list_1[0]
+    max = list_1[0]
+    for var in range(len(list_1)):
+        if min > list_1[var]:
+           min = list_1[var]
+        else:
+           max = list_1[var]
+    print('the min number is = ', min)
+    print('the max number is = ', max)
+
+
+
+min_and_max()

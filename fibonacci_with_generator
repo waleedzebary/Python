@@ -1,0 +1,13 @@
+def fibonacci_with_generator(number):
+    start_1 = 0
+    start_2 = 1
+    for i in range(number):
+        yield start_1
+        temp = start_1
+        start_1 = start_2
+        start_2 = temp + start_2
+
+
+numbers = int(input('Enter a number: '))
+for item in fibonacci_with_generator(numbers):
+    print(item)

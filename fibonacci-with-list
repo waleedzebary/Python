@@ -1,0 +1,14 @@
+def fibonacci_with_list(number):
+    start_1 = 0
+    start_2 = 1
+    result = []
+    for i in range(number):
+        result.append(start_1)
+        temp = start_1
+        start_1 = start_2
+        start_2 = temp + start_2
+    return result
+
+
+numbers = int(input('Enter a number: '))
+print(fibonacci_with_list(numbers))

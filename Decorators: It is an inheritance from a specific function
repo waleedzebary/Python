@@ -1,0 +1,42 @@
+from time import time
+
+
+def my_decorator(function):
+    def wrap_function(*args, **kwargs):
+        print('*' * 15)
+        function(*args, **kwargs)
+        print('*' * 15)
+    return wrap_function
+
+
+@my_decorator
+def hello(name, age, born):
+    print(f"hello everyone, my name is: {name}, and I'm {age} years old, born in {born}")
+
+
+@my_decorator
+def bye():
+    print('see ya later')
+
+
+def performance(func):
+    def wrapper(*args, **kwargs):
+        time_1 = time()
+        result = func(*args, **kwargs)
+        time_2 = time()
+        print(f"took is:{time_2 - time_1} s")
+        return result
+    return wrapper
+
+
+@performance
+def long_time():
+    for i in range(0, 10000000):
+        i * 5
+
+
+@performance
+def long_time2():
+    print('2')
+    for i in list(range(10000000)):
+        i * 5
